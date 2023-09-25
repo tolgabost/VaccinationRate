@@ -1,0 +1,51 @@
+import pandas as pd
+import numpy as np
+
+data = pd.read_csv("country_vaccination_stats.csv")
+data.column = [each.split()[0]+"_"+each.split()[1] if(len(each.split())>1) else each for each in data.columns]
+
+data.describe()
+
+# import numpy as np
+# import pandas as pd
+
+
+# data = pd.read_csv("country_vaccination_stats.csv")
+
+# min_vacc = data.groupby(by="country").min()
+
+# nan_index = data[data.daily_vaccinations.isna()].index
+
+# for i in nan_index:
+#     data.iloc[i,2:3] = min_vacc.iloc[:,1][data.loc[i,:]['country']]
+
+
+# np.where(data["daily_vaccinations"].isna())
+# data.loc[750,"daily_vaccinations"] = 0
+# print(data.isna().sum())
+
+
+filtre = (data1.date == "1/6/2021")
+
+filtered_data = data1[filtre]
+x = filtered_data.daily_vaccinations.sum()
+
+
+median_list = []
+
+for i in frames:
+    a = i.daily_vaccinations.median()
+    median_list.append(a)
+print(median_list)
+len(median_list)
+ml = median_list.copy()
+ml.sort()
+print(median_list.index(378253.0))
+print(median_list.index(276786.0))
+print(median_list.index(173922.0))
+
+print(frames[57].country.value_counts())
+print(frames[8].country.value_counts())
+print(frames[23].country.value_counts())
+
+#this is the full version of the code
